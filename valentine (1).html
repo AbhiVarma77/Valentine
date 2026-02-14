@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day, Cutepie! 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 105, 180, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(255, 192, 203, 0.3) 0%, transparent 50%),
+                linear-gradient(135deg, #FFB6C1 0%, #FFB8D0 15%, #FFC0CB 30%, #FF69B4 50%, #FF1493 70%, #C71585 85%, #8B0A50 100%);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+            animation: romanticGlow 8s ease-in-out infinite alternate;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @keyframes romanticGlow {
+            0% { 
+                filter: brightness(1) saturate(1);
+            }
+            50% { 
+                filter: brightness(1.1) saturate(1.2);
+            }
+            100% { 
+                filter: brightness(1) saturate(1);
+            }
+        }
+
+        /* Floating hearts background */
+        .heart-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .floating-heart {
+            position: absolute;
+            font-size: 30px;
+            opacity: 0.3;
+            animation: floatUp 10s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0.3;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.95) 0%, rgba(255, 20, 147, 0.90) 100%);
+            padding: 60px 50px;
+            border-radius: 40px;
+            box-shadow: 
+                0 30px 90px rgba(255, 20, 147, 0.4),
+                0 0 60px rgba(255, 105, 180, 0.3),
+                inset 0 0 80px rgba(255, 255, 255, 0.2);
+            max-width: 600px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+            border: 5px solid rgba(255, 255, 255, 0.6);
+            animation: scaleIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+        }
+
+        .container::before {
+            content: '❤️';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 60px;
+            animation: heartFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes heartFloat {
+            0%, 100% { transform: translateX(-50%) translateY(0px); }
+            50% { transform: translateX(-50%) translateY(-15px); }
+        }
+
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0.5) rotate(-5deg);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #ffffff;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes shakeWebsite {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            10% { transform: translate(-10px, -10px) rotate(-2deg); }
+            20% { transform: translate(10px, 10px) rotate(2deg); }
+            30% { transform: translate(-10px, 10px) rotate(-2deg); }
+            40% { transform: translate(10px, -10px) rotate(2deg); }
+            50% { transform: translate(-10px, -10px) rotate(-2deg); }
+            60% { transform: translate(10px, 10px) rotate(2deg); }
+            70% { transform: translate(-10px, 10px) rotate(-2deg); }
+            80% { transform: translate(10px, -10px) rotate(2deg); }
+            90% { transform: translate(-5px, -5px) rotate(-1deg); }
+        }
+
+        body.shake {
+            animation: shakeWebsite 0.6s ease-in-out;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+
+
+        .question {
+            font-size: 2em;
+            color: #ffffff;
+            font-weight: 700;
+            margin: 40px 0 30px;
+            font-family: 'Pacifico', cursive;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .buttons-container {
+            position: relative;
+            height: 150px;
+            margin-top: 20px;
+        }
+
+        button {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.3em;
+            font-weight: 700;
+            padding: 18px 50px;
+            margin: 10px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        #yesBtn {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+            }
+            50% {
+                box-shadow: 0 10px 50px rgba(245, 87, 108, 0.8);
+            }
+        }
+
+        #yesBtn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 50px rgba(245, 87, 108, 0.6);
+        }
+
+        #noBtn {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #666;
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+
+        #noBtn:hover {
+            transform: scale(1.05);
+        }
+
+        .no-message {
+            font-size: 1.2em;
+            color: #ffffff;
+            font-weight: 600;
+            margin-top: 20px;
+            min-height: 30px;
+            animation: fadeIn 0.5s ease;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Celebration styles */
+        .celebration {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        .celebration.active {
+            display: block;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #f50057;
+            animation: confettiFall 3s linear forwards;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .success-message {
+            display: none;
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5em;
+            color: #ffffff;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.15); }
+        }
+
+
+
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            animation: fireworkExplosion 1s ease-out forwards;
+        }
+
+        @keyframes fireworkExplosion {
+            0% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart-bg" id="heartBg"></div>
+    
+    <div class="container" id="container">
+        <h1>Happy Valentine's Day! 💖</h1>
+        <div class="subtitle">To my dear cutepie</div>
+
+        <div class="question">Will you be my Valentine? 🌹</div>
+        
+        <div class="buttons-container" id="buttonsContainer">
+            <button id="yesBtn">Yes! 💕</button>
+            <button id="noBtn">No</button>
+        </div>
+        
+        <div class="no-message" id="noMessage"></div>
+        <div class="success-message" id="successMessage">Ok, we can go to date tonight! I love you maa cutepie! 💖✨</div>
+    </div>
+
+    <div class="celebration" id="celebration"></div>
+
+    <script>
+        // TypeScript-style JavaScript with type comments
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const noMessage = document.getElementById('noMessage');
+        const successMessage = document.getElementById('successMessage');
+        const celebration = document.getElementById('celebration');
+        const container = document.getElementById('container');
+        const buttonsContainer = document.getElementById('buttonsContainer');
+
+        // Messages when "No" is clicked
+        const noMessages = [
+            "I want you! 💕",
+            "Please don't leave my hand, baby! 🥺",
+            "Can you please try again? 💝",
+            "Pretty please? 🌹",
+            "I need you in my life! 💖",
+            "You're my everything! ✨",
+            "Just one chance? 🥰",
+            "My heart belongs to you! 💗"
+        ];
+
+        let noClickCount = 0;
+
+        // Create floating hearts background
+        function createFloatingHearts() {
+            const heartBg = document.getElementById('heartBg');
+            const hearts = ['💖', '💕', '💗', '💓', '💝', '💘', '❤️', '🌹'];
+            
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 10 + 's';
+                heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                heartBg.appendChild(heart);
+            }
+        }
+
+        // Move "No" button to random position
+        function moveNoButton() {
+            const containerRect = buttonsContainer.getBoundingClientRect();
+            const btnRect = noBtn.getBoundingClientRect();
+            
+            const maxX = containerRect.width - btnRect.width;
+            const maxY = containerRect.height - btnRect.height;
+            
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+            
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        }
+
+        // Handle "No" button click
+        noBtn.addEventListener('click', () => {
+            noMessage.textContent = noMessages[noClickCount % noMessages.length];
+            noClickCount++;
+            moveNoButton();
+            
+            // Shake the entire website
+            document.body.classList.add('shake');
+            setTimeout(() => {
+                document.body.classList.remove('shake');
+            }, 600);
+        });
+
+        // Create confetti
+        function createConfetti() {
+            const colors = ['#ff1744', '#f50057', '#ff4081', '#ff80ab', '#fce4ec', '#f8bbd0', '#e91e63'];
+            
+            for (let i = 0; i < 150; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animationDelay = (Math.random() * 0.5) + 's';
+                    confetti.style.width = (Math.random() * 10 + 5) + 'px';
+                    confetti.style.height = (Math.random() * 10 + 5) + 'px';
+                    celebration.appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 3000);
+                }, i * 20);
+            }
+        }
+
+        // Create fireworks effect
+        function createFirework(x, y) {
+            const colors = ['#ff1744', '#f50057', '#ff4081', '#ff80ab', '#9c27b0', '#e91e63'];
+            const particles = 30;
+            
+            for (let i = 0; i < particles; i++) {
+                const firework = document.createElement('div');
+                firework.className = 'firework';
+                firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                firework.style.left = x + 'px';
+                firework.style.top = y + 'px';
+                
+                const angle = (Math.PI * 2 * i) / particles;
+                const velocity = 50 + Math.random() * 50;
+                const tx = Math.cos(angle) * velocity;
+                const ty = Math.sin(angle) * velocity;
+                
+                firework.style.setProperty('--tx', tx + 'px');
+                firework.style.setProperty('--ty', ty + 'px');
+                firework.style.transform = `translate(${tx}px, ${ty}px)`;
+                
+                celebration.appendChild(firework);
+                
+                setTimeout(() => firework.remove(), 1000);
+            }
+        }
+
+        // Launch multiple fireworks
+        function launchFireworks() {
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    const x = Math.random() * window.innerWidth;
+                    const y = Math.random() * window.innerHeight * 0.5;
+                    createFirework(x, y);
+                }, i * 300);
+            }
+        }
+
+        // Handle "Yes" button click
+        yesBtn.addEventListener('click', () => {
+            // Hide question and buttons
+            buttonsContainer.style.display = 'none';
+            noMessage.style.display = 'none';
+            
+            // Show success message
+            successMessage.classList.add('show');
+            
+            // Start celebration
+            celebration.classList.add('active');
+            createConfetti();
+            launchFireworks();
+            
+            // Continue launching fireworks
+            setTimeout(() => launchFireworks(), 2000);
+            setTimeout(() => launchFireworks(), 4000);
+        });
+
+        // Initialize
+        createFloatingHearts();
+        moveNoButton();
+    </script>
+</body>
+</html>
